@@ -54,6 +54,9 @@ public final class InitUpgrades {
         Upgrades.add(AEItems.FUZZY_CARD, AEParts.LEVEL_EMITTER, 1);
         Upgrades.add(AEItems.CRAFTING_CARD, AEParts.LEVEL_EMITTER, 1);
 
+        // Stockpile Switch!
+        Upgrades.add(AEItems.FUZZY_CARD, AEParts.STOCKPILE_SWITCH, 1);
+
         // Import Bus
         Upgrades.add(AEItems.FUZZY_CARD, AEParts.IMPORT_BUS, 1, itemIoBusGroup);
         Upgrades.add(AEItems.REDSTONE_CARD, AEParts.IMPORT_BUS, 1, itemIoBusGroup);

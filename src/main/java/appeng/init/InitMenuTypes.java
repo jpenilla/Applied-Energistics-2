@@ -48,6 +48,7 @@ import appeng.menu.implementations.SpatialAnchorMenu;
 import appeng.menu.implementations.SpatialIOPortMenu;
 import appeng.menu.implementations.StorageBusMenu;
 import appeng.menu.implementations.StorageLevelEmitterMenu;
+import appeng.menu.implementations.StorageStockpileSwitchMenu;
 import appeng.menu.implementations.VibrationChamberMenu;
 import appeng.menu.implementations.WirelessMenu;
 import appeng.menu.me.common.MEStorageMenu;
@@ -106,6 +107,7 @@ public final class InitMenuTypes {
                 SpatialIOPortMenu.TYPE,
                 StorageBusMenu.TYPE,
                 StorageLevelEmitterMenu.TYPE,
+                StorageStockpileSwitchMenu.TYPE,
                 VibrationChamberMenu.TYPE,
                 WirelessCraftingTermMenu.TYPE,
                 WirelessMenu.TYPE);
