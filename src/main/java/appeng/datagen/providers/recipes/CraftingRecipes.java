@@ -1496,6 +1496,12 @@ public class CraftingRecipes extends AE2RecipeProvider {
                 .requires(ConventionTags.CAN_REMOVE_COLOR)
                 .unlockedBy("has_smart_cable", has(ConventionTags.SMART_CABLE))
                 .save(consumer, AppEng.makeId("network/cables/smart_fluix_clean"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEParts.STOCKPILE_SWITCH)
+                .requires(AEParts.LEVEL_EMITTER)
+                .requires(Items.LEVER)
+                .unlockedBy("has_calculation_processor", has(AEItems.CALCULATION_PROCESSOR))
+                .save(consumer, AppEng.makeId("network/parts/stockpile_switch"));
     }
 
     private void addPaintBalls(Consumer<FinishedRecipe> consumer) {

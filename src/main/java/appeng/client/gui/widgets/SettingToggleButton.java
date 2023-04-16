@@ -139,6 +139,12 @@ public class SettingToggleButton<T extends Enum<T>> extends IconButton {
                     ButtonToolTips.RedstoneMode,
                     ButtonToolTips.EmitLevelAbove);
 
+            // Same as above without tooltips, as we indicate behavior with text in the gui instead
+            registerApp(Icon.REDSTONE_LOW, Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH, RedstoneMode.LOW_SIGNAL,
+                    ButtonToolTips.RedstoneMode);
+            registerApp(Icon.REDSTONE_HIGH, Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH, RedstoneMode.HIGH_SIGNAL,
+                    ButtonToolTips.RedstoneMode);
+
             registerApp(Icon.ARROW_LEFT, Settings.OPERATION_MODE, OperationMode.FILL,
                     ButtonToolTips.TransferDirection,
                     ButtonToolTips.TransferToStorageCell);

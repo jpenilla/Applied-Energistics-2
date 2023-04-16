@@ -114,7 +114,7 @@ public class StorageStockpileSwitchMenu extends UpgradeableMenu<StorageStockpile
         if (cm.hasSetting(Settings.FUZZY_MODE)) {
             this.setFuzzyMode(cm.getSetting(Settings.FUZZY_MODE));
         }
-        this.setRedStoneMode(cm.getSetting(Settings.REDSTONE_EMITTER));
+        this.setRedStoneMode(cm.getSetting(Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH));
     }
 
     public boolean supportsFuzzySearch() {

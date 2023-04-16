@@ -54,6 +54,10 @@ public final class Settings {
             LevelEmitterMode.class);
     public static final Setting<RedstoneMode> REDSTONE_EMITTER = register("redstone_emitter", RedstoneMode.HIGH_SIGNAL,
             RedstoneMode.LOW_SIGNAL);
+    // Same as above without tooltips, as we indicate behavior with text in the gui instead
+    public static final Setting<RedstoneMode> REDSTONE_EMITTER_STOCKPILE_SWITCH = register(
+            "redstone_emitter_stockpile_switch", RedstoneMode.HIGH_SIGNAL,
+            RedstoneMode.LOW_SIGNAL);
     public static final Setting<RedstoneMode> REDSTONE_CONTROLLED = register("redstone_controlled", RedstoneMode.class);
     public static final Setting<CondenserOutput> CONDENSER_OUTPUT = register("condenser_output", CondenserOutput.class);
     public static final Setting<PowerUnits> POWER_UNITS = register("power_units", PowerUnits.class);

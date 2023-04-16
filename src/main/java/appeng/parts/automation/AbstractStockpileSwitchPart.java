@@ -55,7 +55,7 @@ public abstract class AbstractStockpileSwitchPart extends UpgradeablePart {
         // Level emitters do not require a channel to function
         getMainNode().setFlags();
 
-        this.getConfigManager().registerSetting(Settings.REDSTONE_EMITTER, RedstoneMode.HIGH_SIGNAL);
+        this.getConfigManager().registerSetting(Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH, RedstoneMode.HIGH_SIGNAL);
     }
 
     protected abstract void configureWatchers();
@@ -110,9 +110,10 @@ public abstract class AbstractStockpileSwitchPart extends UpgradeablePart {
 
     private boolean maybeFlipState() {
         if (prevRedstoneMode == null) {
-            prevRedstoneMode = this.getConfigManager().getSetting(Settings.REDSTONE_EMITTER);
+            prevRedstoneMode = this.getConfigManager().getSetting(Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH);
         } else {
-            RedstoneMode currRedstoneMode = this.getConfigManager().getSetting(Settings.REDSTONE_EMITTER);
+            RedstoneMode currRedstoneMode = this.getConfigManager()
+                    .getSetting(Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH);
             if (currRedstoneMode != prevRedstoneMode) {
                 currentState = !currentState;
                 prevRedstoneMode = currRedstoneMode;
@@ -130,20 +131,8 @@ public abstract class AbstractStockpileSwitchPart extends UpgradeablePart {
         }
 
         final boolean flipState = this.getConfigManager()
-                .getSetting(Settings.REDSTONE_EMITTER) == RedstoneMode.LOW_SIGNAL;
+                .getSetting(Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH) == RedstoneMode.LOW_SIGNAL;
         return flipState != this.currentState;
-    }
-
-    protected boolean isEmittingAndOnline() {
-        if (isClientSide()) {
-            return clientSideOn;
-        }
-
-        if (!this.getMainNode().isActive()) {
-            return false;
-        }
-
-        return isEmitting();
     }
 
     public final void setBounds(final long ceiling, final long floor) {

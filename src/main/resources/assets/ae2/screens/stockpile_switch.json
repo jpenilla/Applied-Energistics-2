@@ -2,48 +2,66 @@
   "$schema": "schema.json",
   "includes": ["common/common.json", "common/player_inventory.json"],
   "background": {
-    "texture": "guis/level_emitter.png",
-    "srcRect": [0, 0, 176, 184]
+    "texture": "guis/stockpile_switch.png",
+    "srcRect": [0, 0, 176, 174]
   },
   "slots": {
     "CONFIG": {
       "left": 137,
-      "top": 40
+      "top": 27
     }
   },
   "text": {
     "dialog_title": {
       "text": {
-        "translate": "gui.ae2.LevelEmitter"
+        "translate": "gui.ae2.StockpileSwitch"
       },
       "position": {
         "left": 8,
         "top": 6
       }
+    },
+    "ceiling_subtitle": {
+      "text": {
+        "translate": "gui.ae2.StockpileSwitchCeiling"
+      },
+      "position": {
+        "left": 23,
+        "top": 22
+      }
+    },
+    "floor_subtitle": {
+      "text": {
+        "translate": "gui.ae2.StockpileSwitchFloor"
+      },
+      "position": {
+        "left": 23,
+        "top": 49
+      }
     }
   },
   "widgets": {
-    "floor": {
-      "left": 20,
-      "top": 17,
-      "width": 138,
-      "height": 62
-    },
-    "floorInput": {
-      "left": 23,
-      "top": 42,
-      "width": 83,
-      "height": 12
-    },
     "ceiling": {
-      "left": 20,
-      "top": 67,
-      "width": 138,
-      "height": 62
+      "left": 0,
+      "top": 0,
+      "width": 0,
+      "height": 0
     },
     "ceilingInput": {
       "left": 23,
-      "top": 92,
+      "top": 32,
+      "width": 83,
+      "height": 12
+    },
+    "floor": {
+      "left": 0,
+      "top": 0,
+      "width": 0,
+      "height": 0
+    },
+    "floorInput": {
+      "left": 23,
+      "top": 59,
       "width": 83,
       "height": 12
     }

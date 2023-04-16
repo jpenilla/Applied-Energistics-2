@@ -259,7 +259,12 @@ public enum GuiText implements LocalizationEnum {
     inWorldCraftingPresses(
             "Crafting Presses are obtained by breaking a Mysterious Cube. Mysterious Cubes are in the center of meteorites which can be found in around the world. They can be located by using a meteorite compass."),
     inWorldSingularity(
-            "To create drop 1 Singularity and 1 Ender Dust and cause an explosion within range of the items.");
+            "To create drop 1 Singularity and 1 Ender Dust and cause an explosion within range of the items."),
+    StockpileSwitch("ME Stockpile Switch"),
+    StockpileSwitchCeiling("Emit when >="),
+    StockpileSwitchFloor("Until <="),
+    StockpileSwitchCeilingInv("Emit until >="),
+    StockpileSwitchFloorInv("When <=");
 
     private final String root;
 

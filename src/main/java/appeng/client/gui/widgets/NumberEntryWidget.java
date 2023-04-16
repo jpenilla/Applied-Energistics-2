@@ -131,6 +131,10 @@ public class NumberEntryWidget extends GuiComponent implements ICompositeWidget 
         this.buttons.forEach(b -> b.active = active);
     }
 
+    public void hideButtons() {
+        this.buttons.forEach(b -> b.visible = false);
+    }
+
     /**
      * Sets the bounds of the text field on the screen. This may seem insane, but the text-field background is actually
      * baked into the screens background image, which necessitates setting it precisely.

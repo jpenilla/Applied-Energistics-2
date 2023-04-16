@@ -18,6 +18,8 @@
 
 package appeng.client.gui.implementations;
 
+import java.util.List;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -29,6 +31,7 @@ import appeng.client.gui.style.ScreenStyle;
 import appeng.client.gui.widgets.NumberEntryWidget;
 import appeng.client.gui.widgets.ServerSettingToggleButton;
 import appeng.client.gui.widgets.SettingToggleButton;
+import appeng.core.localization.GuiText;
 import appeng.menu.implementations.StorageStockpileSwitchMenu;
 
 public class StorageStockpileSwitchScreen extends UpgradeableScreen<StorageStockpileSwitchMenu> {
@@ -42,7 +45,8 @@ public class StorageStockpileSwitchScreen extends UpgradeableScreen<StorageStock
             ScreenStyle style) {
         super(menu, playerInventory, title, style);
 
-        this.redstoneMode = new ServerSettingToggleButton<>(Settings.REDSTONE_EMITTER, RedstoneMode.LOW_SIGNAL);
+        this.redstoneMode = new ServerSettingToggleButton<>(Settings.REDSTONE_EMITTER_STOCKPILE_SWITCH,
+                RedstoneMode.LOW_SIGNAL);
         this.fuzzyMode = new ServerSettingToggleButton<>(Settings.FUZZY_MODE, FuzzyMode.IGNORE_ALL);
         this.addToLeftToolbar(this.redstoneMode);
         this.addToLeftToolbar(this.fuzzyMode);
@@ -71,6 +75,18 @@ public class StorageStockpileSwitchScreen extends UpgradeableScreen<StorageStock
         this.fuzzyMode.setVisibility(menu.supportsFuzzySearch());
 
         this.redstoneMode.set(menu.getRedStoneMode());
+
+        if (menu.getRedStoneMode() == RedstoneMode.LOW_SIGNAL) {
+            this.setTextContent("ceiling_subtitle", GuiText.StockpileSwitchCeilingInv.text());
+            this.setTextContent("floor_subtitle", GuiText.StockpileSwitchFloorInv.text());
+        } else {
+            this.setTextContent("ceiling_subtitle", GuiText.StockpileSwitchCeiling.text());
+            this.setTextContent("floor_subtitle", GuiText.StockpileSwitchFloor.text());
+        }
+
+        for (final NumberEntryWidget widget : List.of(this.floor, this.ceiling)) {
+            widget.hideButtons();
+        }
     }
 
     private void saveFloor() {
